@@ -27,6 +27,8 @@ import { useActiveOrder } from '~/utils/use-active-order';
 import { sessionStorage } from './sessions';
 import { setApiUrl } from '~/graphqlWrapper';
 import { getAvailableCountries } from './providers/checkout/checkout';
+import CookieConsent from 'react-cookie-consent';
+import { buildOptions } from '@graphql-codegen/cli';
 
 export const meta: MetaFunction = () => {
     return { title: APP_META_TITLE, description: APP_META_DESCRIPTION };
@@ -167,7 +169,7 @@ export default function App() {
                             adjustOrderLine,
                             removeItem,
                             switchChannel,
-                            setActiveChannelToken
+                            setActiveChannelToken,
                         }}
                     />
                 </main>
@@ -182,6 +184,15 @@ export default function App() {
                 <Scripts />
                 {devMode && <LiveReload />}
                 <Footer collections={collections}></Footer>
+                <CookieConsent
+                    disableStyles={true}
+                    location="bottom"
+                    buttonClasses="bg-primary-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary-500"
+                    containerClasses="bg-gray-700 fixed flex flex-row justify-between w-full items-center p-2 drop-shadow"
+                    contentClasses="text-capitalize text-white "
+                >
+                    This website uses cookies to enhance the user experience.
+                </CookieConsent>
             </body>
         </html>
     );
