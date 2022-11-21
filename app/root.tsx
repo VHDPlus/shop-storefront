@@ -73,7 +73,7 @@ export type RootLoaderData = {
 };
 
 export async function loader({ request, params, context }: DataFunctionArgs) {
-    if (typeof context.VENDURE_API_URL === 'string') {
+    if (typeof context?.VENDURE_API_URL === 'string') {
         // Set the API URL for Cloudflare Pages
         setApiUrl(context.VENDURE_API_URL);
     }

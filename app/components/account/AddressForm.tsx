@@ -207,25 +207,24 @@ export function AddressForm({
                     Country
                 </label>
                 <div className="mt-1">
-                    {availableCountries && (
-                        <select
-                            id={prefix + 'countryCode'}
-                            name={prefix + 'countryCode'}
-                            defaultValue={
-                                address?.countryCode ??
-                                customerAddress?.country?.code ??
-                                undefined
-                            }
-                            onChange={x => x.currentTarget.blur()}
-                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                        >
-                            {availableCountries.map((item) => (
-                                <option key={item.id} value={item.code}>
-                                    {item.name}
-                                </option>
-                            ))}
-                        </select>
-                    )}
+                    <select
+                        id={prefix + 'countryCode'}
+                        name={prefix + 'countryCode'}
+                        defaultValue={
+                            address?.countryCode ??
+                            customerAddress?.country?.code ??
+                            undefined
+                        }
+                        onChange={x => x.currentTarget.blur()}
+                        className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                    >
+                        <option key={undefined} value={undefined} disabled selected>Select</option>
+                        {availableCountries?.map((item) => (
+                            <option key={item.id} value={item.code}>
+                                {item.name}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
         </div>
