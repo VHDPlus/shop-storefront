@@ -9,7 +9,6 @@ gcloud run deploy $1 \
             --region "europe-west1" \
             --platform "managed" \
             --allow-unauthenticated \
-            --session-affinity \
             --project=vhdplus \
             --set-env-vars=$ENV_VARS \
             --memory=$2

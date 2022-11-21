@@ -184,15 +184,18 @@ export default function App() {
                 <Scripts />
                 {devMode && <LiveReload />}
                 <Footer collections={collections}></Footer>
+
+                {false ? (
                 <CookieConsent
                     disableStyles={true}
                     location="bottom"
-                    buttonClasses="bg-primary-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary-500"
-                    containerClasses="bg-gray-700 fixed flex flex-row justify-between w-full items-center p-2 drop-shadow"
-                    contentClasses="text-capitalize text-white "
+                    buttonClasses="whitespace-nowrap bg-primary-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary-500"
+                    containerClasses="bg-zinc-800 fixed flex flex-row justify-between w-full items-center p-2 drop-shadow"
+                    contentClasses="text-capitalize text-white"
                 >
                     This website uses cookies to enhance the user experience.
                 </CookieConsent>
+                ) : ("")}
             </body>
         </html>
     );
