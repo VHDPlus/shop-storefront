@@ -243,7 +243,7 @@ export default function CheckoutShipping() {
                 </div>
             ) : (
                 ''
-            )}
+            )}  
 
             <button
                 type="button"
