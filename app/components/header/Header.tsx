@@ -34,18 +34,20 @@ export function Header({
                 <div className="max-w-7xl mx-2 md:mx-auto flex items-center justify-between">
                     <div className="hidden sm:block">
                         <p>
-                            <span>Yes, we ship <span className="font-bold">WORLDWIDE!</span> </span>
-                            <a
-                                href="/taxes-shipping"
-                                className="underline"
-                            >
+                            <span>
+                                Yes, we ship{' '}
+                                <span className="font-bold">WORLDWIDE!</span>{' '}
+                            </span>
+                            <a href="/taxes-shipping" className="underline">
                                 Taxes and Shipping
-                            </a>
-                            {' '}
+                            </a>{' '}
                         </p>
                     </div>
                     <div className="flex items-center space-x-4 justify-between grow sm:grow-0">
-                        <ChannelSwitcher switchChannel={switchChannel} activeChannelToken={activeChannelToken}/>
+                        <ChannelSwitcher
+                            switchChannel={switchChannel}
+                            activeChannelToken={activeChannelToken}
+                        />
                         <Link
                             to={isSignedIn ? '/account' : '/sign-in'}
                             className="flex space-x-1"
@@ -67,26 +69,29 @@ export function Header({
                         />
                     </Link>
                 </h1>
-                <h1 className='text-white font-bold text-lg'>
-                    VHDPlus Shop
-                </h1>
+                <h1 className="text-white font-bold text-lg">VHDPlus Shop</h1>
                 <div className="flex space-x-4 hidden sm:block">
-                    {data.collections.map((collection) => (
-                        <Link
-                            className="text-sm md:text-base text-gray-200 hover:text-white"
-                            to={'/collections/' + collection.slug}
-                            prefetch="intent"
-                            key={collection.id}
-                        >
-                            {collection.name}
-                        </Link>
-                    ))}
+                    <Link
+                        className="text-sm md:text-base text-gray-200 hover:text-white"
+                        to={'/collections/hardware'}
+                        prefetch="intent"
+                    >
+                        Hardware
+                    </Link>
+                    <Link
+                        className="text-sm md:text-base text-gray-200 hover:text-white"
+                        to={'/products/vhdplus-ide-pro'}
+                        prefetch="intent"
+                    >
+                        VHDPlus IDE
+                    </Link>
                     <a
                         className="text-sm md:text-base text-gray-200 hover:text-white"
-                        href={'https://vhdplus.com'} target="blank"
+                        href={'https://vhdplus.com'}
+                        target="blank"
                     >
-                        <p className='inline-block'>Docs</p>
-                        <ExternalLinkIcon className='h-4 inline-block ml-1 mb-1' />
+                        <p className="inline-block">Docs</p>
+                        <ExternalLinkIcon className="h-4 inline-block ml-1 mb-1" />
                     </a>
                 </div>
                 <div className="flex-1 md:pr-3 md:pl-3">
